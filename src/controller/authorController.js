@@ -57,12 +57,12 @@ const login = async function (req, res) {
         const email = req.body.email
         const password = req.body.password
         if (!validator.isValidEmail(email)) {
-            return res.status(500).send({ status: false, msg: "pls provide valid email" })
+            return res.status(400).send({ status: false, msg: "pls provide valid email" })
 
         }
 
         if (!validator.isValid(password)) {
-            return res.status(500).send({ status: false, msg: "pls provide password" })
+            return res.status(400).send({ status: false, msg: "pls provide password" })
 
         }
 
